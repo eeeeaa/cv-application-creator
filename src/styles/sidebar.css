@@ -1,0 +1,16 @@
+.side-bar-nav {
+  width: 400px;
+  height: 100vh;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .side-bar-nav {
+    position: relative;
+    height: 100%;
+    width: 80%;
+  }
+}

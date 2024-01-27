@@ -1,0 +1,29 @@
+.submit-button,
+.remove-button {
+  background-color: black;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border-color: transparent;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+  align-items: center;
+  background-color: rgb(37, 37, 37);
+
+  .submit-button {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+}
