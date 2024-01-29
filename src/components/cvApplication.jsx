@@ -1,8 +1,20 @@
 /* eslint-disable react/prop-types */
 import "../styles/cvApplication.css";
-export default function CVApplication({ cvData = null }) {
+
+function Navbar({ toggleSidebar }) {
+  return (
+    <div className="content-nav-bar">
+      <button className="openbtn" onClick={toggleSidebar}>
+        ☰ Open Sidebar
+      </button>
+    </div>
+  );
+}
+
+export default function CVApplication({ cvData = null, toggleSidebar }) {
   return (
     <div className="cv-container">
+      <Navbar toggleSidebar={toggleSidebar} />
       <div className="cv-content">
         <div>{cvData.fullName}</div>
         <div>{cvData.email}</div>
@@ -21,7 +33,7 @@ export default function CVApplication({ cvData = null }) {
             );
           })}
         </ul>
-        <div>
+        <ul>
           {cvData.experiences.map((experience) => {
             return (
               <li key={experience.key}>
@@ -29,7 +41,7 @@ export default function CVApplication({ cvData = null }) {
               </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </div>
   );

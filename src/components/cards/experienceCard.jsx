@@ -74,7 +74,11 @@ export default function ExperienceCard({ experiences, setExperiences }) {
   };
 
   return (
-    <form action="#" onSubmit={handleSubmit}>
+    <form
+      action="#"
+      onSubmit={handleSubmit}
+      className="experience card-container"
+    >
       <fieldset>
         <legend>Experience</legend>
         <div className="card-content">

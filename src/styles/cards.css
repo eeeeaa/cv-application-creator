@@ -6,6 +6,17 @@
   border-color: transparent;
 }
 
+#about-me-text-area {
+  resize: none;
+}
+
+.card-container {
+  fieldset {
+    border: 1px solid grey;
+    border-radius: 1em;
+  }
+}
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -15,12 +26,10 @@
 }
 
 .card-header {
-  padding: 1em;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1em;
   align-items: center;
-  background-color: rgb(37, 37, 37);
 
   .submit-button {
     width: 100%;

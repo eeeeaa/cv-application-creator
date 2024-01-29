@@ -20,6 +20,7 @@ body {
   );
   -webkit-animation: AnimateBG 40s ease infinite;
   animation: AnimateBG 40s ease infinite;
+  background-attachment: fixed;
 }
 
 @-webkit-keyframes AnimateBG {
@@ -47,15 +48,7 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
-  justify-items: center;
-}
-
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-  }
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
 }
