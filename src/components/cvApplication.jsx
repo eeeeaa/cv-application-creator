@@ -21,7 +21,15 @@ export default function CVApplication({ cvData = null }) {
             );
           })}
         </ul>
-        <div>{cvData.experiences}</div>
+        <div>
+          {cvData.experiences.map((experience) => {
+            return (
+              <li key={experience.key}>
+                {`${experience.companyName}, ${experience.position}, ${experience.responsibility}, ${experience.startDate} - ${experience.endDate}`}
+              </li>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
