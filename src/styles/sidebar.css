@@ -1,18 +1,45 @@
 .side-bar-nav {
+  flex-shrink: 0;
   height: 100%;
   background-color: #111;
   overflow: auto;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  width: 400px;
+}
+
+@keyframes slideOpen {
+  from {
+    display: none;
+    margin-left: -400px;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideClose {
+  from {
+    display: flex;
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: -400px;
+    display: none;
+    opacity: 0;
+  }
 }
 
 .side-bar-open {
-  transform: translateX(0);
-  opacity: 1;
+  display: flex;
+  animation: slideOpen 0.5s ease;
 }
 
 .side-bar-close {
-  transform: translateX(-50%);
-  opacity: 0;
+  display: none;
+  animation: slideClose 0.5s ease;
 }
 
 .side-bar-content {
