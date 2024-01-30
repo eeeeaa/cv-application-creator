@@ -19,6 +19,7 @@ export default function CVApplication({ cvData = null, toggleSidebar }) {
         <div>{cvData.fullName}</div>
         <div>{cvData.email}</div>
         <div>{cvData.github}</div>
+        <div>{cvData.aboutMe}</div>
         <ul>
           {cvData.skills.map((skill) => {
             return <li key={skill.key}>{skill.title}</li>;

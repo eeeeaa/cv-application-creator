@@ -30,13 +30,9 @@ export default function Sidebar({
     >
       <div className="side-bar-content">
         <ProfileCard
-          fullName={fullName}
           setFullName={setFullName}
-          email={email}
           setEmail={setEmail}
-          github={github}
           setGithub={setGithub}
-          aboutMe={aboutMe}
           setAboutMe={setAboutMe}
         />
         <SkillCard skills={skills} setSkills={setSkills} />
