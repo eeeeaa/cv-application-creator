@@ -1,4 +1,7 @@
 .side-bar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-shrink: 0;
   height: 100%;
   background-color: #111;
@@ -32,6 +35,32 @@
   }
 }
 
+@keyframes slideOpenVert {
+  from {
+    display: none;
+    margin-top: -400px;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideCloseVert {
+  from {
+    display: flex;
+    margin-top: 0;
+    opacity: 1;
+  }
+  to {
+    margin-top: -400px;
+    display: none;
+    opacity: 0;
+  }
+}
+
 .side-bar-open {
   display: flex;
   animation: slideOpen 0.5s ease;
@@ -49,4 +78,14 @@
 }
 
 @media (max-width: 768px) {
+  .side-bar-nav {
+    height: 400px;
+    width: 100%;
+  }
+  .side-bar-open {
+    animation: slideOpenVert 0.5s ease;
+  }
+  .side-bar-close {
+    animation: slideCloseVert 0.5s ease;
+  }
 }
