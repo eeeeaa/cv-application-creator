@@ -83,7 +83,9 @@ export default function ProfileCard({
             onChange={addAboutMe}
             value={profileToAdd.aboutMe}
           ></textarea>
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
         </div>
       </fieldset>
     </form>
