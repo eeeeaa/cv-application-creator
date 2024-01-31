@@ -73,13 +73,156 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.5em;
+    align-self: normal;
 
     .contacts {
       display: flex;
+      font-size: medium;
+      font-weight: 300;
+      color: #b7bbc2;
       gap: 1em;
       align-items: center;
       font-weight: 100;
       font-style: italic;
+    }
+  }
+  .about-me-description {
+    font-size: medium;
+    font-weight: 500;
+    color: #a1a1aa;
+  }
+}
+
+.skills-section {
+  .cv-skill-list {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+    gap: 1em;
+  }
+
+  .cv-skill-item {
+    min-width: 0;
+    display: block;
+    background: linear-gradient(45deg, #292524, #44403c);
+    box-shadow: 10px 12px 0px 0px #262626;
+    border-radius: 0.5em;
+    padding: 1em;
+    max-width: 150px;
+    min-height: 30px;
+    transition: transform 0.2s ease;
+
+    p {
+      text-align: center;
+      min-width: 0;
+      min-height: 0;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-size: large;
+      font-weight: 400;
+    }
+  }
+
+  .cv-skill-item:hover {
+    transform: scale(1.02);
+  }
+}
+
+.education-section {
+  .cv-education-list {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .cv-education-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+    width: 80%;
+    min-height: 100px;
+    background: linear-gradient(45deg, #292524, #44403c);
+    box-shadow: 10px 12px 0px 0px #262626;
+
+    .cv-edu-institution-name,
+    .cv-edu-title,
+    .cv-edu-graduation-date {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cv-edu-institution-name {
+      font-size: xx-large;
+      font-weight: 600;
+    }
+    .cv-edu-title {
+      font-size: large;
+      font-style: italic;
+      font-weight: 600;
+      color: #a3a3a3;
+    }
+    .cv-edu-graduation-date {
+      align-self: normal;
+      display: flex;
+      justify-content: space-between;
+      font-size: medium;
+      font-weight: 300;
+      color: #b7bbc2;
+    }
+  }
+}
+
+.experience-section {
+  .cv-experience-list {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .cv-experience-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+    width: 80%;
+    min-height: 100px;
+    background: linear-gradient(45deg, #292524, #44403c);
+    box-shadow: 10px 12px 0px 0px #262626;
+
+    .cv-exp-item-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      .cv-exp-company-name {
+        font-size: xx-large;
+        font-weight: 700;
+      }
+      .cv-exp-position {
+        font-size: large;
+        font-weight: 500;
+      }
+      .cv-exp-date {
+        align-self: normal;
+        display: flex;
+        justify-content: space-between;
+        font-size: medium;
+        font-weight: 400;
+        color: #b7bbc2;
+      }
+    }
+    .cv-exp-responsibilities {
+      font-size: medium;
+      font-weight: 500;
+      color: #a1a1aa;
     }
   }
 }

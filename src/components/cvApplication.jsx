@@ -4,10 +4,10 @@ import "../styles/cvApplication.css";
 function Navbar({ toggleSidebar }) {
   return (
     <div className="content-nav-bar">
-      <h1 className="nav-logo">CV Application Creator</h1>
       <button className="openbtn" onClick={toggleSidebar}>
         ☰ Open Sidebar
       </button>
+      <h1 className="nav-logo">CV APPLICATION CREATOR</h1>
     </div>
   );
 }
@@ -22,8 +22,11 @@ function IntroSection({ cvData }) {
             : "YOUR NAME HERE"}
         </h1>
         <div className="contacts">
+          <div className="contacts-title">Get in touch:</div>
           <div className="contact-item">{cvData.email}</div>
-          <div className="contact-item">{cvData.github}</div>
+          <div className="contact-item">
+            <a href={cvData.github}>{cvData.github != null ? "Github" : ""}</a>
+          </div>
         </div>
       </div>
       <div className="about-me-description">{cvData.aboutMe}</div>
@@ -40,8 +43,10 @@ function SkillSection({ cvData }) {
       <ul className="cv-skill-list">
         {cvData.skills.map((skill) => {
           return (
-            <li key={skill.key} className="cv-skill-item">
-              {skill.title}
+            <li key={skill.key}>
+              <div className="cv-skill-item">
+                <p>{skill.title}</p>
+              </div>
             </li>
           );
         })}
@@ -61,8 +66,13 @@ function EducationSection({ cvData }) {
           return (
             <li key={education.key} className="cv-education-item">
               <div className="cv-edu-institution-name">{education.edName}</div>
+              <div className="cv-edu-graduation-date">
+                <div>GRADUATION:</div>{" "}
+                <div>
+                  {new Date(education.edDate).toDateString().toUpperCase()}
+                </div>
+              </div>
               <div className="cv-edu-title">{education.edTitle}</div>
-              <div className="cv-edu-graduation-date">{education.edDate}</div>
             </li>
           );
         })}
@@ -86,7 +96,14 @@ function ExperienceSection({ cvData }) {
                   {experience.companyName}
                 </div>
                 <div className="cv-exp-position">{experience.position}</div>
-                <div className="cv-exp-date">{`${experience.startDate} - ${experience.endDate}`}</div>
+                <div className="cv-exp-date">
+                  <div className="cv-exp-date-title">WORK DURATION:</div>
+                  <div>{`${new Date(experience.startDate)
+                    .toDateString()
+                    .toUpperCase()} - ${new Date(experience.endDate)
+                    .toDateString()
+                    .toUpperCase()}`}</div>
+                </div>
               </div>
               <div className="cv-exp-responsibilities">
                 {experience.responsibility}
