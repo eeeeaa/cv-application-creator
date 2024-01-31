@@ -24,8 +24,15 @@ function IntroSection({ cvData }) {
         <div className="contacts">
           <div className="contacts-title">Get in touch:</div>
           <div className="contact-item">{cvData.email}</div>
-          <div className="contact-item">
-            <a href={cvData.github}>{cvData.github != null ? "Github" : ""}</a>
+          <div
+            className="contact-item contact-link"
+            onClick={() => {
+              if (cvData.github != null) {
+                window.open(cvData.github);
+              }
+            }}
+          >
+            {cvData.github != null ? "Github" : ""}
           </div>
         </div>
       </div>

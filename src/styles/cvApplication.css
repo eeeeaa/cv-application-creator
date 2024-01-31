@@ -85,6 +85,15 @@
       font-weight: 100;
       font-style: italic;
     }
+
+    .contact-link {
+      cursor: pointer;
+      color: #94a3b8;
+      transition: color 0.2s ease;
+    }
+    .contact-link:hover {
+      color: #e2e8f0;
+    }
   }
   .about-me-description {
     font-size: medium;
